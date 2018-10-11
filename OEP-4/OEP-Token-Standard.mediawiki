@@ -67,6 +67,21 @@ The parameters <code>from</code> and <code>to</code> SHOULD be 20-byte address. 
 The parameter <code>amount</code> MUST be greater than <code>0</code>. If not, this method SHOULD <code>throw</code> an exception.
 Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.
 
+====transferMulti====
+<pre>
+public static bool TransferMulti(object[] args)
+
+public struct State
+{
+     public byte[] From;
+     public byte[] To;
+     public BigInteger Amount;
+}
+</pre>
+
+The transferMulti allows transfer amount of token from multiple <code>from</code> to multiple <code>to</code> multiple times.The parameter is object array, the object is <code>State</code> struct, which contains three items.<code>From</code> is transfer sender, which SHOULD be 20-byte address.<code>To</code> is transfer receiver, which
+also SHOULD be 20-byte address. <code>Amount</code> is transfer value of token. If any of transfer fail, all of the transfers SHOULD be failed, and the method SHOULD <code>throw</code> an exception.
+
 ====approve====
 <pre>
 public static bool approve(byte[] owner, byte[] spender, BigInteger amount)
