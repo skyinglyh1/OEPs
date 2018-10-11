@@ -45,6 +45,11 @@ public static byte decimals()
 
 Returns the number of decimals used by the token - e.g. <code>8</code>, means to divide the token amount by <code>100,000,000</code> to get its user representation.
 
+====totalSupply====
+<pre>
+public static BigInteger totalSupply()
+</pre>
+Returns the total number of token.
 
 ====balanceOf====
 
