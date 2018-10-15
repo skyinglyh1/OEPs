@@ -96,11 +96,11 @@ The parameters <code>owner</code>and <code>spender</code> SHOULD be 20-byte addr
 
 ====transferFrom====
 <pre>
-public static bool transferFrom(byte[] sender, byte[] from, byte[] to, BigInteger amount)
+public static bool transferFrom(byte[] spender, byte[] from, byte[] to, BigInteger amount)
 </pre>
 
-The transferFrom method is used for a withdraw workflow, allowing <code>sender</code> to withdraw <code>amount</code> of token from <code>from</code> account  to <code>to</code> account.
-The parameters <code>sender</code> <code>from</code> and <code>to</code> SHOULD be 20-byte addresses. If not, this method SHOULD <code>throw</code> an exception.Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.
+The transferFrom method is used for a withdraw workflow, allowing <code>spender</code> to withdraw <code>amount</code> of token from <code>from</code> account  to <code>to</code> account.
+The parameters <code>spender</code> <code>from</code> and <code>to</code> SHOULD be 20-byte addresses. If not, this method SHOULD <code>throw</code> an exception.Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.
 
 ====allowance====
 
@@ -124,7 +124,7 @@ A token contract which burns tokens MUST trigger a <code>transfer</code> event w
 
 ====approval====
 <pre>
-public static event approval(byte[] from, byte[] to, BigInteger amount)
+public static event approval(byte[] owner, byte[] spender, BigInteger amount)
 </pre>
 MUST trigger on any successful call to approve.
 
