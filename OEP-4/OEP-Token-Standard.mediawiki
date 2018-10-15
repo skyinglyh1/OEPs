@@ -69,8 +69,7 @@ public static bool transfer(byte[] from, byte[] to, BigInteger amount)
 
 Transfers an <code>amount</code> of tokens from the <code>from</code> account to the <code>to</code> account.
 The parameters <code>from</code> and <code>to</code> SHOULD be 20-byte address. If not, this method SHOULD <code>throw</code> an exception.
-The parameter <code>amount</code> MUST be greater than <code>0</code>. If not, this method SHOULD <code>throw</code> an exception.
-Transfers of 0 values MUST be treated as normal transfers and fire the Transfer event.
+The parameter <code>amount</code> is transfer value of token.
 
 ====transferMulti====
 <pre>
